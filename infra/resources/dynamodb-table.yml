@@ -1,0 +1,18 @@
+Resources:
+  TestDbTodo:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: test-db-todo
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: todoId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: todoId
+          KeyType: RANGE
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1

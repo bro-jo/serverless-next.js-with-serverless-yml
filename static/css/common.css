@@ -1,0 +1,29 @@
+html,
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", sans-serif;
+}
+::selection {
+    background: #6f5f425a;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: #6f5f425a;
+    text-shadow: none;
+}
+::-webkit-selection {
+    background: #6f5f425a;
+    text-shadow: none;
+}
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+}

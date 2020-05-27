@@ -1,0 +1,27 @@
+service: serverless-next-js-yml
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  timeout: 8
+  memorySize: 512
+  region: ap-northeast-2
+  versionFunctions: false
+  environment:
+    TZ: Asia/Seoul
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [ TestDbTodo, Arn ]
+
+resources:
+  - ${file(resources/dynamodb-table.yml)}
+  - ${file(resources/iam-role.yml)}

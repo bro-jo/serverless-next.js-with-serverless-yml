@@ -1,0 +1,11 @@
+node_modules
+.next
+.serverless
+!.serverless/_.json
+!.serverless/Template*
+.serverless_nextjs
+coverage
+.idea
+.DS_Store
+**/*/.DS_Store
+.env
